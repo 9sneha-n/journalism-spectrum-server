@@ -39,6 +39,12 @@ app.get('/', (request, response) => {
     response.send('Hello from Express!')
 })
 
+
+app.get('/spectrum_journalists', (request, response) => {
+    let res = {journalists : journalist_spectrum}
+    response.send(JSON.stringify(res));
+})
+
 app.post('/journalism_spectrum', function (req, res) {
 
     req.body.journalists.forEach((journalist) => {
@@ -54,6 +60,7 @@ app.post('/journalism_spectrum', function (req, res) {
         {
             curJourno.id = journalist.id;
             curJourno.name = journalist.name;
+            curJourno.imgSrc = journalist.imgSrc;
             curJourno.avg_weightX = journalist.weightX;
             curJourno.avg_weightY = journalist.weightY;
             curJourno.no_of_voters = 1;
