@@ -1,1 +1,1 @@
-# journalism-spectrum-server
+# journalism-spectrum-server - Updated in Develop Again
